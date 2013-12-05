@@ -16,4 +16,6 @@ composer_command << " --prefer-source"
 composer_command << " --optimize-autoloader"
 composer_command << " install"
 
-run "cd #{release_path} && #{composer_command}"
+run "cd #{release_path}"
+run "curl -sS https://getcomposer.org/installer | php"
+run "cd #{composer_command}"
