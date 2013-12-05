@@ -9,7 +9,7 @@ release_vendor = "#{release_path}/vendor"
 ::FileUtils.cp_r vendor_dir, release_vendor if ::File.exists?(vendor_dir)
 ::FileUtils.chown_R deploy_user, deploy_group, release_vendor if ::File.exists?(release_vendor)
 
-composer_command = "/usr/local/bin/php"
+composer_command = "php"
 composer_command << " #{release_path}/composer.phar"
 composer_command << " --no-dev"
 composer_command << " --prefer-source"
